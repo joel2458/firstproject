@@ -1,0 +1,39 @@
+{% extends 'basepage.html' %}
+{% block content %}
+<section>
+<div class="container">
+    <div  class="row justify-content-center align-items-center">
+        <div class="a col-md-6  my-5"  style="background-color:rgba(14, 5, 131, 0.308); box-shadow: 3px 10px 18px blue;">
+            <div class="col-md-12">
+                {% for  msg in messages %}
+                <h1 style="color: blueviolet; text-align:center;">{{ msg }}</h1>
+                {% endfor %}
+                
+   
+        <form class="form my-4" action="{% url 'user_login' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h3 class="text-center text-warning font-weight-bold">Login</h3>
+          
+                <label for="username" class="text-warning">Username:</label><br>
+                <input type="text" name="username" class="form-control">
+            
+                <label for="password" class="text-warning">Password:</label><br>
+                <input type="password" name="password"  class="form-control">
+            
+                <button type="submit" class="btn btn-outline-success my-3" style="margin-left: 40%;">login</button>
+          
+            <div  class="text-right">
+                <a href="" class="text-warning">Register here</a><br>
+                <a href="" class="text-warning">Back To Home</a>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+   
+    
+
+{% endblock %}

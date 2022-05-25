@@ -1,0 +1,46 @@
+{% extends 'basepage.html' %}
+{% block content %}
+{% load static %}
+
+<section>
+    <div class="container">
+        <div  class="row justify-content-center align-items-center">
+            <div class="a col-md-12  my-5"  style="background-color:rgba(14, 5, 131, 0.308); box-shadow: 3px 10px 18px blue;">
+<div class="container-fluid">
+ <div class="container bg-info" >
+    <h1>SHOW USER DETAILS</h1></div>
+<table class="table table-stribed bg-info">
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Address</th>
+            <th>Age</th>
+            <th>Joining Date</th>
+            <th>Course</th>
+            <th>Course Fee</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in std %}
+        <tr>
+            <td>{{ i.std_name }}</td>
+            <td>{{ i.std_address }}</td>
+            <td>{{ i.std_age }}</td>
+            <td>{{ i.Join_date }}</td>
+            <td>{{ i.course.course_name }}</td>
+            <td>{{ i.course.fee }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+ 
+<button class="btn bg-warning float-right"><a href="{% url 'admin_home' %}"  style="margin-left: 10%;">back</a></button>
+
+
+
+</div>
+</div>
+</div>
+</div>
+</section>
+{% endblock %}

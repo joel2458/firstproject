@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+    <head>
+
+        <style>
+            .hero{
+                background-image: url('static/image/poly.png');
+                
+            }
+
+           
+        </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+        {% load static %}
+
+        <title>Leadership Event HTML5 Bootstrap v5 Template</title>
+
+        <!-- CSS FILES -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" enctype="multipart/form-data">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"> 
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+        
+<!--
+
+TemplateMo 575 Leadership Event
+
+https://templatemo.com/tm-575-leadership-event
+
+-->
+    </head>
+    
+    <body>
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+               
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a href="" class="navbar-brand mx-auto mx-lg-0">
+                    <i class="bi-youtube brand-logo"></i>
+                    <span class="brand-text">Govt Polytechnic <br> Collage</span>
+                </a>
+
+               
+
+                <div class="collapse navbar-collapse nav-tabs">
+                    
+                    
+
+                    <ul class="navbar-nav ms-auto">
+
+                        {% if user.is_staff %}
+
+                        <li class="nav-item">
+                            <a class="nav-link  custom-btn btn d-none d-lg-block" href="{% url 'show_user_details' %}">show teacher</a>
+                        </li>
+
+                        <li class="nav-item">  
+                            <a class="nav-link click-scroll custom-btn btn d-none d-lg-block" href="{% url 'load_add_course' %}">add course</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll custom-btn btn d-none d-lg-block" href="{% url 'student1' %}">add student</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  custom-btn btn d-none d-lg-block" href="{% url 'show_student_details' %}">show students</a>
+                        </li>
+
+                        <li class="nav-item">  
+                            <a class="nav-link click-scroll custom-btn btn d-none d-lg-block" href="{% url 'logout' %}">logout</a>
+                        </li>
+
+                        
+
+
+                        {% else %}
+                        
+                        <li class="nav-item">
+                            <a class="nav-link  custom-btn btn d-none d-lg-block" href="/">Home</a>
+                        </li>
+
+                        <li class="nav-item">  
+                            <a class="nav-link click-scroll custom-btn btn d-none d-lg-block" href="">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll custom-btn btn d-none d-lg-block" href="">contact</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll custom-btn btn d-none d-lg-block" href="{% url 'signuppage' %}">signup</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll custom-btn btn d-none d-lg-block" href="{% url 'loginpage' %}">login</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll custom-btn btn d-none d-lg-block" href="">Venue</a>
+                        </li>
+                        {% endif %}
+
+                     
+                    </ul>
+
+                    
+                
+                </div>
+                        
+            </div>
+        </nav>
+
+      
+
+            <section class="hero" >              
+                   
+{% block content%}
+
+{% endblock %}
+                
+       </section>     
+
+
+          
+            </body>
+            </html>

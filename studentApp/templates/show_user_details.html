@@ -1,0 +1,58 @@
+{% extends 'basepage.html' %}
+{% block content %}
+{% load static %}
+
+<section>
+    <div class="container">
+        <div  class="row justify-content-center align-items-center">
+            <div class="a col-md-12  my-5"  style="background-color:rgba(14, 5, 131, 0.308); box-shadow: 3px 10px 18px blue;">
+<div class="container-fluid">
+ <div class="container bg-secondary" >
+    <h1>SHOW USER DETAILS</h1>
+    <table class="table table-stribed bg-secondary" ">
+        <thead>
+            <tr>
+                <th>Teacher Name</th>
+                <th>Address</th>
+                <th>email</th>
+                <th>username</th>
+                <th>gender</th>
+                <th>photo</th>
+                <th>remove<th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for u in user %}
+            <tr>
+                <td>{{ u.user.first_name }} {{ u.user.last_name }}</td>
+                <td>{{ u.user_address }}</td>
+                <td>{{ u.user.email }}</td>
+                <td>{{ u.user.username }}</td>
+                <td>{{ u.user_gender }}</td>
+                {% if u.user_image == '/static/image/defaultimg.png' %}
+                <td>
+                    <img src="{% static 'image/defaultimg.png' %}" class="w-25">
+                </td>
+                {% else %}
+                <td>
+                    <img src="{{ u.user_image.url }}" class="w-25">
+                </td>
+               
+
+                {% endif %}
+                
+               
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button class="btn bg-warning float-right"><a href="{% url 'admin_home' %}"  style="margin-left: 10%;">back</a></button>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+{% endblock %}
